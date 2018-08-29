@@ -357,7 +357,7 @@ int main()
             inserty();
         else
             printf("Invalid option selected");
-        
+            break;
         
     }
     
