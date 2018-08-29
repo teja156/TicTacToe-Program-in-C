@@ -356,8 +356,11 @@ int main()
         if(an==1)
             inserty();
         else
+        {
             printf("Invalid option selected");
             break;
+        }
+            
         
     }
     
