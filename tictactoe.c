@@ -257,7 +257,7 @@ int inserty()
     if(inserted==0)
     {
         //now check for diagonal - check if any two elements in the diagonal are equal
-        if((arr[0][0] == arr[1][1]) || (arr[2][2]==arr[0][0]) || (arr[1][1]==arr[2][2]))
+        if(((arr[0][0] == arr[1][1])&&arr[0][0]!='N') || ((arr[2][2]==arr[0][0]) && arr[2][2]!='N') || ((arr[1][1]==arr[2][2]) && arr[1][1]!='N'))
         {
             if(arr[0][0]=='N')
             {
@@ -313,6 +313,8 @@ int inserty()
                 x = (rand() %(upper - lower + 1)) + lower;
                 y = (rand() %(upper - lower + 1)) + lower;
                 
+                printf("\nRandom number 1 %d\n",x);
+                printf("\nRandom number 2 %d\n",y);
                 if(arr[x][y]=='N')
                 {
                     arr[x][y] = 'Y';
