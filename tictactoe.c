@@ -370,8 +370,8 @@ int inserty()
                 //x = (rand() %(upper - lower + 1)) + lower;
                 //y = (rand() %(upper - lower + 1)) + lower;
                 
-                printf("\nRandom number 1 %d\n",((rand() %3) + 1)-1);
-                printf("\nRandom number 2 %d\n",((rand() %3) + 1)-1);
+                //printf("\nRandom number 1 %d\n",((rand() %3) + 1)-1);
+                //printf("\nRandom number 2 %d\n",((rand() %3) + 1)-1);
                 if(arr[((rand()%3) + 1)-1][((rand()%3) + 1)-1]=='N')
                 {
                     arr[((rand() %3) + 1)-1][((rand() %3) + 1)-1] = 'Y';
