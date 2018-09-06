@@ -137,47 +137,104 @@ int insertx(int posx)
     switch(posx)
     {
         case 1:
-            arr[0][0] = 'X';
-            count++;
-            break;
+            if(arr[0][0]!='Y')
+            {
+                arr[0][0] = 'X'; 
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+                
+            
         case 2:
-            arr[0][1] = 'X';
-            count++;
-            break;
+            if(arr[0][1]!='Y')
+            {
+                arr[0][1] = 'X'; 
+                count++;
+                return 1;
+            }
+                
+            else
+                return 0;
+            
+            
         case 3:
-            arr[0][2] = 'X';
-            count++;
-            break;
+            if(arr[0][2]!='Y')
+            {
+                arr[0][2] = 'X'; 
+                count++;
+                return 1;
+            }
+            else 
+                return 0;
+            
         case 4:
-            arr[1][0] = 'X';
-            count++;
-            break;
+            if(arr[1][0]!='Y')
+            {
+                arr[1][0] = 'X';
+                count++;
+                return 1;
+            }
+            
+            
         case 5:
-            arr[1][1] = 'X';
-            count++;
-            break;
+            if(arr[1][1]!='Y')
+            {
+                arr[1][1] = 'X';
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+            
         case 6:
-            arr[1][2] = 'X';
-            count++;
-            break;
+            if(arr[1][2]!='Y')
+            {
+                arr[1][2] = 'X';
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+            
         case 7:
-            arr[2][0] = 'X';
-            count++;
-            break;
+            if(arr[2][0]!='Y')
+            {
+                arr[2][0] = 'X';
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+            
         case 8:
-            arr[2][1] = 'X';
-            count++;
-            break;
+            if(arr[2][1]!='Y')
+            {
+                arr[2][1] = 'X';
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+            
         case 9:
-            arr[2][2] = 'X';
-            count++;
-            break;
+            if(arr[2][2]!='Y')
+            {
+                arr[2][2] = 'X';
+                count++;
+                return 1;
+            }
+            else
+                return 0;
+            
+            
         default:
-            printf("Invalid position entered");
+            return 0;
             
     }
     
-    return 0;
+    //return 0;
 }
 
 int inserty()
@@ -279,7 +336,7 @@ int inserty()
             }
         }
 
-        else if((arr[0][2] == arr[1][1]) || (arr[2][0]==arr[0][2]) || (arr[1][1]==arr[2][0]))
+        else if(((arr[0][2] == arr[1][1]) && arr[0][2]!='N') || ((arr[2][0]==arr[0][2]) && arr[2][0]!='N') || ((arr[1][1]==arr[2][0]) && arr[1][1]!='N'))
         {
             if(arr[0][2]=='N')
             {
@@ -306,24 +363,40 @@ int inserty()
         {
             //at this point we can randomly insert Y at a position for now
             int x,y;
-            int upper = 2;
-            int lower = 0;
+            int upper = 3;
+            int lower = 1;
             while(1)
             {
-                x = (rand() %(upper - lower + 1)) + lower;
-                y = (rand() %(upper - lower + 1)) + lower;
+                //x = (rand() %(upper - lower + 1)) + lower;
+                //y = (rand() %(upper - lower + 1)) + lower;
                 
-                printf("\nRandom number 1 %d\n",x);
-                printf("\nRandom number 2 %d\n",y);
-                if(arr[x][y]=='N')
+                printf("\nRandom number 1 %d\n",((rand() %3) + 1)-1);
+                printf("\nRandom number 2 %d\n",((rand() %3) + 1)-1);
+                if(arr[((rand()%3) + 1)-1][((rand()%3) + 1)-1]=='N')
                 {
-                    arr[x][y] = 'Y';
+                    arr[((rand() %3) + 1)-1][((rand() %3) + 1)-1] = 'Y';
+                    inserted=1;
                     count++;
                     break;
                 }
             }
             
             
+        }
+        
+        if(inserted==0)
+        {
+            int i,j;
+            for(i=0;i<3;i++)
+                for(i=0;i<3;i++)
+                {
+                    if(arr[i][j]=='N')
+                    {
+                        arr[i][j]='Y';
+                        count++;
+                        inserted=1;
+                    }
+                }
         }
         
         
@@ -347,8 +420,17 @@ int main()
         }
         printf("Where do you want to insert X? (1,2,3,4,5,6,7,8,9) : ");
         int posx;
-        scanf("%d",&posx);
-        insertx(posx);
+        while(1)
+        {
+            scanf("%d",&posx);
+            
+            int a = insertx(posx);
+            if(a==1)
+                break;
+            else
+                printf("Invalid choice enetered, please enter again : ");
+        }
+        
         printf("You made your choice : \n");
         showtable();
         printf("Now, its computer's turn : \n");
