@@ -8,7 +8,7 @@ int count=0;
 int checkmatches()
 {
     int i;
-    int over =0;
+    int over=0;
     char ch;
     int j=0; //for rows
     int f=0;
@@ -76,7 +76,6 @@ int checkmatches()
             printf("oops, computer wins! better luck next time baby\n");
         exit(0);  
     }
-    
     return 0;
 }
 
@@ -96,7 +95,7 @@ int showtable()
                 k++;
                 
             }
-            printf("\n ---------------------------- \n");
+            printf("\n ------------------- \n");
             
         }
     }
@@ -120,7 +119,7 @@ int showtable()
                     k++;
                 }
             }
-            printf("\n ---------------------------- \n");
+            printf("\n ------------------- \n");
         }
         
         //now check if there are any matches
@@ -362,7 +361,7 @@ int inserty()
         else
         {
             //at this point we can randomly insert Y at a position for now
-            int x,y;
+            //int x,y;
             int upper = 3;
             int lower = 1;
             while(1)
@@ -372,6 +371,7 @@ int inserty()
                 
                 //printf("\nRandom number 1 %d\n",((rand() %3) + 1)-1);
                 //printf("\nRandom number 2 %d\n",((rand() %3) + 1)-1);
+                
                 if(arr[((rand()%3) + 1)-1][((rand()%3) + 1)-1]=='N')
                 {
                     arr[((rand() %3) + 1)-1][((rand() %3) + 1)-1] = 'Y';
@@ -383,6 +383,7 @@ int inserty()
             
             
         }
+        /**
         
         if(inserted==0)
         {
@@ -398,6 +399,7 @@ int inserty()
                     }
                 }
         }
+        */
         
         
     }
@@ -436,11 +438,21 @@ int main()
         printf("Now, its computer's turn : \n");
         printf("Enter 1 to let computer play : ");
         int an;
-        scanf("%d",&an);
-        if(an==1)
-            inserty();
+        
+        while(1)
+        {
+            scanf("%d",&an);
+            if(an==1)
+            {
+                inserty();
+                break;
+            }
+                
         else
-            printf("Invalid option selected");
+            printf("\nInvalid option selected, please enter again : ");
+            
+        }
+        
         
         
     }
