@@ -282,7 +282,7 @@ int inserty()
         }
         
         //check column - check if any two elements in the column are equal
-        else if(((arr[g][h]==arr[g+1][h] && arr[g][h]!='N') || (arr[g][h]==arr[g+2][h] && arr[g][h]!='N') || (arr[g+1][h]==arr[g+2][h] && arr[g+1][h]!='N')) && (inserted==0))
+        if(((arr[g][h]==arr[g+1][h] && arr[g][h]!='N') || (arr[g][h]==arr[g+2][h] && arr[g][h]!='N') || (arr[g+1][h]==arr[g+2][h] && arr[g+1][h]!='N')) && (inserted==0))
         {
             if(arr[g][h]=='N')
             {
@@ -337,7 +337,7 @@ int inserty()
             }
         }
 
-        else if(((arr[0][2] == arr[1][1]) && arr[0][2]!='N') || ((arr[2][0]==arr[0][2]) && arr[2][0]!='N') || ((arr[1][1]==arr[2][0]) && arr[1][1]!='N'))
+        if((((arr[0][2] == arr[1][1]) && arr[0][2]!='N') || ((arr[2][0]==arr[0][2]) && arr[2][0]!='N') || ((arr[1][1]==arr[2][0]) && arr[1][1]!='N')) && (inserted==0))
         {
             if(arr[0][2]=='N')
             {
@@ -360,7 +360,7 @@ int inserty()
             
         }
         
-        else
+        if(inserted==0)
         {
             //at this point we can randomly insert Y at a position for now
             //int x,y;
