@@ -136,7 +136,7 @@ int insertx(int posx)
     switch(posx)
     {
         case 1:
-            if(arr[0][0]!='Y')
+            if(arr[0][0]!='Y'&&arr[0][0]!='X')
             {
                 arr[0][0] = 'X'; 
                 count++;
@@ -147,7 +147,7 @@ int insertx(int posx)
                 
             
         case 2:
-            if(arr[0][1]!='Y')
+            if(arr[0][1]!='Y'&&arr[0][1]!='X')
             {
                 arr[0][1] = 'X'; 
                 count++;
@@ -159,7 +159,7 @@ int insertx(int posx)
             
             
         case 3:
-            if(arr[0][2]!='Y')
+            if(arr[0][2]!='Y'&&arr[0][2]!='X')
             {
                 arr[0][2] = 'X'; 
                 count++;
@@ -169,7 +169,7 @@ int insertx(int posx)
                 return 0;
             
         case 4:
-            if(arr[1][0]!='Y')
+            if(arr[1][0]!='Y'&&arr[1][0]!='X')
             {
                 arr[1][0] = 'X';
                 count++;
@@ -178,7 +178,7 @@ int insertx(int posx)
             
             
         case 5:
-            if(arr[1][1]!='Y')
+            if(arr[1][1]!='Y'&&arr[1][1]!='X')
             {
                 arr[1][1] = 'X';
                 count++;
@@ -188,7 +188,7 @@ int insertx(int posx)
                 return 0;
             
         case 6:
-            if(arr[1][2]!='Y')
+            if(arr[1][2]!='Y'&&arr[1][2]!='X')
             {
                 arr[1][2] = 'X';
                 count++;
@@ -198,7 +198,7 @@ int insertx(int posx)
                 return 0;
             
         case 7:
-            if(arr[2][0]!='Y')
+            if(arr[2][0]!='Y'&&arr[2][0]!='X')
             {
                 arr[2][0] = 'X';
                 count++;
@@ -208,7 +208,7 @@ int insertx(int posx)
                 return 0;
             
         case 8:
-            if(arr[2][1]!='Y')
+            if(arr[2][1]!='Y'&&arr[2][1]!='X')
             {
                 arr[2][1] = 'X';
                 count++;
@@ -218,7 +218,7 @@ int insertx(int posx)
                 return 0;
             
         case 9:
-            if(arr[2][2]!='Y')
+            if(arr[2][2]!='Y'&&arr[2][2]!='X')
             {
                 arr[2][2] = 'X';
                 count++;
@@ -377,6 +377,7 @@ int inserty()
                     arr[((rand() %3) + 1)-1][((rand() %3) + 1)-1] = 'Y';
                     inserted=1;
                     count++;
+                    printf("Random insertion done\n");
                     break;
                 }
             }
