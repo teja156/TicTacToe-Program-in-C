@@ -372,9 +372,11 @@ int inserty()
                 //printf("\nRandom number 1 %d\n",((rand() %3) + 1)-1);
                 //printf("\nRandom number 2 %d\n",((rand() %3) + 1)-1);
                 
-                if(arr[((rand()%3) + 1)-1][((rand()%3) + 1)-1]=='N')
+                int randpos1 = ((rand()%3) + 1)-1;
+                int randpos2 = ((rand()%3) + 1)-1;
+                if(arr[randpos1][randpos2]=='N')
                 {
-                    arr[((rand() %3) + 1)-1][((rand() %3) + 1)-1] = 'Y';
+                    arr[randpos1][randpos2] = 'Y';
                     inserted=1;
                     count++;
                     printf("Random insertion done\n");
