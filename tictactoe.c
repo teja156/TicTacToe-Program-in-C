@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 char arr[3][3] = {{'N','N','N'},{'N','N','N'},{'N','N','N'}};
 int count=0;
@@ -238,6 +239,7 @@ int insertx(int posx)
 
 int inserty()
 {
+    srand(time(NULL));
     //this value is automatically inserted by the computer at the best place possible
     //to generate random number use : num = (rand() % (upper – lower + 1)) + lower
     
