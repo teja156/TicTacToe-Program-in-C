@@ -82,6 +82,12 @@ int checkmatches()
 
 int showtable()
 {
+    
+    if(count==9)
+    {
+        printf("Game ended");
+        exit(0);
+    }
     if(count==0)
     {
         //no choices are yet made, display default table with positions of each cell
@@ -388,24 +394,7 @@ int inserty()
             
             
         }
-        /**
-        
-        if(inserted==0)
-        {
-            int i,j;
-            for(i=0;i<3;i++)
-                for(i=0;i<3;i++)
-                {
-                    if(arr[i][j]=='N')
-                    {
-                        arr[i][j]='Y';
-                        count++;
-                        inserted=1;
-                    }
-                }
-        }
-        */
-        
+      
         
     }
     
@@ -425,6 +414,8 @@ int main()
             printf("Game ended.");
             exit(0);
         }
+        
+        
         printf("Where do you want to insert X? (1,2,3,4,5,6,7,8,9) : ");
         int posx;
         while(1)
